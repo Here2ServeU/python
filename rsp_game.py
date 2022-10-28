@@ -1,3 +1,5 @@
+### This is Rock, Scissors, Paper game you play with your system (computer). 
+
 import random, sys 
 
 print('ROCK, PAPER, SCISSORS')
