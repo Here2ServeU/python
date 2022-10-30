@@ -1,0 +1,57 @@
+# importing random
+import random 
+
+# Defining the choices with Rock as #1, Paper as #2, and Scissors as #3. 
+# Assigning choices to User.
+while True:
+    print("Enter choice \n1. Rock \n2. Paper \n3. Scissors")
+    your_choice = int(input("your turn ..."))
+    while your_choice > 3 or your_choice < 1:  
+        your_choice=int(input('Enter Valid Input '))
+    if your_choice == 1: 
+        your_choice_name = "Rock"
+    elif your_choice == 2: 
+        your_choice_name = "Paper"
+    else: 
+        your_choice_name = "Scissors"
+
+# Defining the choices with Rock as #1, Paper as #2, and Scissors as #3. 
+# Assigning choices to Computer, and making them random (using -> 'random.randint').   
+    print("your choice is: ", your_choice_name)
+    print("now is the computer's turn ....")
+    computer_choice = random.randint(1,3)
+    if computer_choice == 1: 
+        computer_choice_name = "Rock"
+    elif computer_choice == 2:
+        computer_choice_name = "Paper"
+    else: 
+        computer_choice_name = "Scissors"
+    print("Computer choice is ..." + computer_choice_name)
+
+# Defining how to win or lose and printing results.    
+    if((your_choice == 1 and computer_choice == 2) or (your_choice == 2 and computer_choice == 1)): 
+        print("Paper wins ...")
+        result = "Paper"
+        
+    elif((your_choice == 1 and computer_choice == 3) or (your_choice == 2 and computer_choice == 1)): 
+        print("Rock wins ...")
+        result = "Rock"
+    
+    else:
+        print("Scissors wins ...")
+        result = "Scissors"
+        
+    if result == your_choice_name: 
+        print("You win!!!")
+    else: 
+        print("Computer wins!!!")
+        
+    print("Do you want to play again? (Y/N)?")
+    ans = input()
+
+# Giving the option to continue with the game or not.    
+    if ans == 'n' or ans == 'N':
+        break
+
+# Displaying a "thank you note" if the User decides to end the game. 
+print("Thanks for playing! ")
